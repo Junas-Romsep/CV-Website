@@ -1,0 +1,29 @@
+{
+  "name": "cv-webbsite",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "vite": "^2.6.13"
+  },
+  "dependencies": {
+    "gh-pages": "^3.2.3",
+    "three": "^0.134.0"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Junas-Romsep/CV-Webbsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Junas-Romsep/CV-Webbsite/issues"
+  },
+  "homepage": "https://github.com/Junas-Romsep/CV-Webbsite#readme",
+  "description": ""
+}
