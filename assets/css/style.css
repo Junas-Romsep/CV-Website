@@ -1,6 +1,7 @@
 *{
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
   font-family: Poppins;
 }
 body {
@@ -35,3 +36,7 @@ h2{
   color: white;
   font-size: 25px;
 }
+
+/* Nav Bar */
+
+/* SideBar */
