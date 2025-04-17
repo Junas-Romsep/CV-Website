@@ -41,7 +41,7 @@ export default function AboutPage() {
       <div className="mt-12">
         <h2 className="text-2xl font-semibold mb-4 text-center">Skills</h2>
         <div className="grid gap-12 md:grid-cols-3 justify-center">
-          <div className="border rounded-lg p-6 bg-gray-50 dark:bg-gray-900 w-full">
+          <div className="border rounded-lg p-6 bg-gray-50 w-full">
             <h3 className="font-medium mb-4 text-lg">Frontend</h3>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
               <li>React & Next.js</li>
@@ -53,7 +53,6 @@ export default function AboutPage() {
               <li>Flutter</li>
               <li>HTML & CSS</li>
               <li>JavaScript</li>
-              <li>PHP</li>
               <li>Java</li>
               <li>C#</li>
               <li>MQL</li>
@@ -61,7 +60,7 @@ export default function AboutPage() {
             </ul>
           </div>
 
-          <div className="border rounded-lg p-6 bg-gray-50 dark:bg-gray-900 w-full">
+          <div className="border rounded-lg p-6 bg-gray-50 w-full">
             <h3 className="font-medium mb-4 text-lg">Backend</h3>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
               <li>Node.js</li>
@@ -69,17 +68,15 @@ export default function AboutPage() {
               <li>MongoDB</li>
               <li>Firebase</li>
               <li>Git & GitHub</li>
-              <li>Version Control</li>
               <li>MQL</li>
               <li>SQL</li>
               <li>REST APIs</li>
             </ul>
           </div>
 
-          <div className="border rounded-lg p-6 bg-gray-50 dark:bg-gray-900 w-full">
+          <div className="border rounded-lg p-6 bg-gray-50  w-full">
             <h3 className="font-medium mb-4 text-lg">Tools & Others</h3>
             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-              <li>Git & GitHub</li>
               <li>CI/CD Pipelines</li>
               <li>Scrum</li>
               <li>JIRA</li>
@@ -89,6 +86,8 @@ export default function AboutPage() {
               <li>IntelliJ IDEA</li>
               <li>Unity</li>
               <li>Blender</li>
+              <li>TVC</li>
+              <li>TIF</li>
             </ul>
           </div>
         </div>

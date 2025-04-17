@@ -15,15 +15,8 @@ const navItems = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-      setIsDarkMode(true);
-    }
-  }, []);
 
   const toggleDarkMode = () => {
     if (isDarkMode) {
@@ -36,26 +29,43 @@ export default function Navbar() {
     setIsDarkMode(!isDarkMode);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+    
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between mx-auto  ">
-        <div className="flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">Romsep</span>
+    <nav className="sticky top-3 z-40 w-full">
+      <div className="container flex h-16 items-center justify-between mx-auto">
+        {/* Logo */}
+        <div className="flex items-center space-x-4">
+          <Link href="/" className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 bg-gray-100 text-gray-800 h-10 py-2 px-4 shadow-md">
+            <span className="font-bold text-lg">Romsep</span>
           </Link>
         </div>
 
+        {/* Navigation Links */}
         <div className="flex justify-center flex-1">
-          <nav className="flex items-center space-x-6 text-sm font-medium">
+          <nav
+            className={cn(
+              "flex items-center space-x-20 text-sm font-medium border border-gray-300 px-6 py-3 rounded-full shadow-md transition-colors duration-300",
+              isScrolled ? "bg-gray-100/80 backdrop-blur-md" : "bg-gray-100"
+            )}
+          >
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 href={item.path}
                 className={cn(
-                  "transition-colors hover:text-foreground/80",
+                  "transition-all duration-300 ease-in-out hover:text-black hover:underline",
                   pathname === item.path
-                    ? "text-foreground font-semibold"
-                    : "text-foreground/60"
+                    ? "text-black font-semibold underline"
+                    : "text-gray-600"
                 )}
               >
                 {item.name}
@@ -64,10 +74,11 @@ export default function Navbar() {
           </nav>
         </div>
 
+        {/* Dark Mode Toggle */}
         <div className="flex items-center space-x-4">
           <button
             onClick={toggleDarkMode}
-            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring bg-background hover:bg-accent hover:text-accent-foreground h-10 py-2 px-4"
+            className="inline-flex items-center justify-center rounded-full text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 bg-gray-100 hover:bg-gray-200 text-gray-800 h-10 py-2 px-4 shadow-md"
           >
             {isDarkMode ? "Light Mode" : "Dark Mode"}
           </button>

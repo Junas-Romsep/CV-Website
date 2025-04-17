@@ -23,7 +23,7 @@ const socialLinks = [
 
 export default function Sidebar() {
   return (
-    <aside className="fixed right-0 top-0 z-30 hidden h-screen w-16 flex-col border-r bg-background md:flex">
+    <aside className="fixed right-0 top-0 z-30 h-screen w-16 flex-col border-r md:flex">
       <div className="flex h-full flex-col items-center justify-center gap-4">
         {socialLinks.map((link) => (
           <Link
