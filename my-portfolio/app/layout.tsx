@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar"
 import Sidebar from "@/components/sidebar"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -27,6 +28,7 @@ export default function RootLayout({
             <div className="flex flex-col flex-1">
               <Navbar />
               <main className="flex-1">{children}</main>
+              <Footer />
             </div>
           </div>
         </ThemeProvider>

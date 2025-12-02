@@ -1,0 +1,126 @@
+import Link from "next/link"
+import { Mail, Phone, MapPin, Instagram, Github, Linkedin } from "lucide-react"
+
+
+export default function Footer() {
+  
+  const currentYear = new Date().getFullYear()
+
+  return (
+    <footer className="bg-gray-900 text-gray-100 py-12 mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {/* Company Info */}
+          <div>
+            <h3 className="text-white font-bold text-lg mb-4">Rafa Allservice AB</h3>
+            <p className="text-gray-400 text-sm">
+              Professionella städ- och bemanningstjänster inom restaurangbranschen i Stockholm.
+            </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Snabblänkar</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/" className="text-gray-400 hover:text-[#29a5b7] transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="/experience" className="text-gray-400 hover:text-[#29a5b7] transition-colors">
+                  Experience
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-400 hover:text-[#29a5b7] transition-colors">
+                  About me
+                </Link>
+              </li>
+              <li>
+                <Link href="/Project" className="text-gray-400 hover:text-[#29a5b7] transition-colors">
+                    Projects
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-400 hover:text-[#29a5b7] transition-colors">
+                  Contact Me
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Kontakt Oss</h4>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-center gap-2 text-gray-400">
+                <Phone size={16} />
+                <span>Junas Romero:</span>
+                <span>073 767 24 15</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-400">
+                <Mail size={16} />
+                <span>Junas.romsep@gmail.com</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-400">
+                <MapPin size={16} />
+                <span>Stockholm, Sverige</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            {/* Divider */}
+            <div className="border-t border-gray-800 pt-8 w-full">
+              <div className="max-w-7xl mx-auto px-4">
+
+                {/* Mobile = 1 column, Desktop = 3 columns */}
+                <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-4">
+
+                  {/* Left text */}
+                  <p className="text-gray-400 text-sm">
+                    &copy; {currentYear} Junas Romero Sepulveda. All rights reserved.
+                  </p>
+
+                  {/* Center icon */}
+                  <div className="flex justify-center gap-6 md:justify-center">
+                    <Link
+                      href="https://github.com/Junas-Romsep"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-[#E4405F] transition-colors"
+                      aria-label="Follow us on GitHub"
+                    >
+                      <Github size={26} />
+                    </Link>
+                    <Link
+                      href="https://www.linkedin.com/in/junas-romero-sepulveda-8117a921b/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-[#E4405F] transition-colors"
+                      aria-label="Follow us on LinkedIn"
+                    >
+                      <Linkedin size={26} />
+                    </Link>
+                    <Link
+                      href="https://www.instagram.com/junas_romsep/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-[#E4405F] transition-colors"
+                      aria-label="Follow us on Instagram"
+                    >
+                      <Instagram size={26} />
+                    </Link>
+                  </div>
+
+                  {/* Empty right column only for desktop */}
+                  <div className="hidden md:block"></div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </footer>
+  )
+}
